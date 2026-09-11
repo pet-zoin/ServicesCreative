@@ -14,7 +14,7 @@ import twit from './assets/twitter.png'
 import faceB from './assets/facebook.png'
 import wht from './assets/whatsApp.png'
 import './App.css'
-import { HashRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 
 function Header() {
   return (
@@ -73,7 +73,7 @@ function App() {
 
   return (
     <>
-      <HashRouter basename="/ServicesCreative">
+      <BrowserRouter basename="/ServicesCreative">
       <Header />
      <Routes>
      <Route path="/" element={<Home />}/>
@@ -86,7 +86,7 @@ function App() {
      <Route path="*" element={<Notfound />}/>
      </Routes>
      <Footer />
-     </HashRouter>
+     </BrowserRouter>
     </>
   )
 }
