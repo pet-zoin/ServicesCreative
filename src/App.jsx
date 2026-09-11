@@ -1,120 +1,92 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import React from 'react'
+import Home from './views/home'
+import Booking from './views/booking'
+import Search from './views/search'
+import Creatives from './views/creatives'
+import Becoming from './views/becoming'
+import About from './views/about'
+import Contact from './views/contact'
+import Notfound from './views/notfound'
+import verse from './assets/CreativeV.jpg'
+import tik from './assets/tiktok.png'
+import ig from './assets/instagram.png'
+import twit from './assets/twitter.png'
+import faceB from './assets/facebook.png'
+import wht from './assets/whatsApp.png'
 import './App.css'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+
+function Header() {
+  return (
+    <>
+    <div id="center">
+      <img src={verse} alt="logo" width="100%" height="20%"/>
+        <input name="search" type="text" placeholder="Search creatives..." id="searchbox"/><button>Search</button>
+          <div className="navs">
+         <NavLink to="/">HOME</NavLink>
+          <NavLink to="/search">SEARCH</NavLink>
+          <NavLink to="/booking">BOOKING</NavLink>
+        <NavLink to="/creatives">CREATIVES</NavLink>
+         <NavLink to="/becoming">BE A CREATIVE</NavLink>
+          <NavLink to="/about">ABOUT US</NavLink>
+          <NavLink to="/contact">CONTACT US</NavLink>
+          </div>     
+    </div>
+    </>
+    )
+}
+
+
+function Footer() {
+  return (
+  <>
+  <div id="footD">
+<h1 id="logo">CreatorVerse</h1>
+<div className="part1"><p id="footDTT">footer</p>
+<section id="about">CreatorVerse is a creative ecosystem built to connect creatives, clients, opportunities, and collaboration in one
+place.</section>
+<section id="link">
+<p><u>LINKS</u></p>
+<p>Privacy policy</p>
+<p>Terms of service</p>
+<p>Be a creative</p>
+<p>Search</p>
+<p>Contact us</p>
+</section>
+  </div>    
+  <div className="part2">
+<div className="socialI">
+  <a href="https://chat.whatsapp.com/Cb4VCGJtSnhL17vKOIXQHD" target="_blank"><img src={wht} alt="whatsapp"/></a>
+  <a href="" target="_blank"><img src={faceB} alt="facebook"/></a>
+  <a href="https://www.tiktok.com/@creatorverse54?_r=1&_t=ZS-99Z4VDK8ImC" target="_blank"><img src={tik} alt="tiktok"/></a>
+  <a href="https://x.com/CreatorVerseNG" target="_blank"><img src={twit} alt="twitter"/></a>
+  <a href="https://www.instagram.com/creator.verseng?stkn=Nnd5M2poamd3MmN1" target="_blank"><img src={ig} alt="instagram"/></a>
+</div>
+  </div>
+  </div>   
+  </>  
+    )
+}
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <BrowserRouter>
+      <Header />
+     <Routes>
+     <Route path="/" element={<Home />}/>
+     <Route path="/search" element={<Search />}/>
+     <Route path="/booking" element={<Booking />}/>
+     <Route path="/creatives" element={<Creatives />}/>
+     <Route path="/becoming" element={<Becoming />}/>
+     <Route path="/about" element={<About />}/>
+     <Route path="/contact" element={<Contact />}/>
+     <Route path="*" element={<Notfound />}/>
+     </Routes>
+     <Footer />
+     </BrowserRouter>
     </>
   )
 }
