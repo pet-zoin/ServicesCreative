@@ -73,7 +73,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/ServicesCreative">
       <Header />
      <Routes>
      <Route path="/" element={<Home />}/>
